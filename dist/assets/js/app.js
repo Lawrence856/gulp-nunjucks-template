@@ -1,0 +1,12 @@
+document.addEventListener('DOMContentLoaded', appInit)
+
+
+function appInit() {
+    console.log('hello world')
+
+    helloModule()
+}
+function helloModule() {
+    console.log('hello modlue')
+}
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyIsIm1vZHVsZXMvbW9kdWxlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUNQQTtBQUNBO0FBQ0EiLCJmaWxlIjoiYXBwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGFwcEluaXQpXG5cblxuZnVuY3Rpb24gYXBwSW5pdCgpIHtcbiAgICBjb25zb2xlLmxvZygnaGVsbG8gd29ybGQnKVxuXG4gICAgaGVsbG9Nb2R1bGUoKVxufSIsImZ1bmN0aW9uIGhlbGxvTW9kdWxlKCkge1xuICAgIGNvbnNvbGUubG9nKCdoZWxsbyBtb2RsdWUnKVxufSJdfQ==
