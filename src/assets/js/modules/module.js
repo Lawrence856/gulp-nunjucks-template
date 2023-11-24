@@ -1,3 +1,3 @@
-function helloModule() {
+export function helloModule() {
     console.log('hello modlue')
 }

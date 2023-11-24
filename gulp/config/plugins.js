@@ -3,10 +3,15 @@ import rename from "gulp-rename"
 import newer from "gulp-newer"
 import replace from "gulp-replace"
 import sourcemaps from'gulp-sourcemaps'
+import uglify from 'gulp-uglify';
+import rollup from 'gulp-rollup';
+
 export const plugins = {
-    sourcemaps,
+    browserSync,
     rename,
     newer,
     replace,
-    browserSync
+    sourcemaps,
+    uglify,
+    rollup
 }

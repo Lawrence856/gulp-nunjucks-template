@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow" />
     <link rel="stylesheet" href="/assets/css/libs.min.css">
+    <link rel="stylesheet" href="/assets/css/sprite.css">
     <link rel="stylesheet" href="/assets/css/app.css">
     <title>{{ page_title | safe }}</title>
 </head>
 <body>
-    <main>
+    {% include "components/header/header.njk" %}
+
+    <main class="{{ main_class }}">
         {% block content %}{% endblock %}
     </main>
+
+    {% include "components/footer/footer.njk" %}
+
     {% block modal %}{% endblock %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/libs.min.js"></script>
     <script src="/assets/js/app.js"></script>
 </body>

@@ -1,18 +1,34 @@
 import gulp from 'gulp'
-import gulpConcat from 'gulp-concat'
+import concat from 'gulp-concat'
+import includePaths from 'rollup-plugin-includepaths';
+import babel from 'gulp-babel';
 
 const appJs = () => {
     return app.gulp.src(app.path.src.js)
         .pipe(app.plugins.sourcemaps.init())
-        .pipe(gulpConcat('app.js'))
-        .pipe(app.plugins.sourcemaps.write())
+        .pipe(app.plugins.rollup({
+            input: [
+                './src/assets/js/app.js'
+            ],
+            output: {
+                format: 'umd',
+            },
+            plugins: [
+                includePaths({ paths: ['src'] }),
+            ]
+        }))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(app.plugins.sourcemaps.write('.'))
         .pipe(app.gulp.dest(app.path.build.js))
         .pipe(app.plugins.browserSync.stream())
 }
 const libsJs = () => {
     return app.gulp.src(app.path.src.libs.js, { allowEmpty: true })
-        .pipe(gulpConcat('libs.min.js'))
-        .pipe(app.gulp.dest(app.path.build.js))
+        .pipe(concat('libs.min.js'))
+        .pipe(app.plugins.uglify())
+        .pipe(app.gulp.dest(app.path.build.jsLibs))
         .pipe(app.plugins.browserSync.stream())
 }
 

@@ -3,24 +3,22 @@ const srcFolder = './src'
 
 export const path = {
     build: {
-        js: `${buildFolder}/assets/js`,
+        js: `${buildFolder}`,
+        jsLibs: `${buildFolder}/assets/js`,
         css: `${buildFolder}/assets/css`,
         html: `${buildFolder}/`,
         images: `${buildFolder}/assets/img`,
         files: `${buildFolder}/assets/files`,
-        svgSprite: `${buildFolder}/assets/img`,
+        svgSprite: `${buildFolder}/assets/css`,
         fonts: `${buildFolder}/assets/fonts`
     },
     src: {
         libs: {
-            js: [
-                `${srcFolder}/assets/libs/js/*.js`,
-                `!${srcFolder}/assets/libs/js/jquery.min.js`
-            ],
+            js: `${srcFolder}/assets/libs/js/*.js`,
             css: `${srcFolder}/assets/libs/css/*.css`
         },
-        js: `${srcFolder}/assets/js/**/*.js`,
-        scss: `${srcFolder}/assets/scss/app.scss`,
+        js: `${srcFolder}/**/*.js`,
+        scss: [`${srcFolder}/assets/scss/app.scss`],
         njk: `${srcFolder}/pages/**/*.njk`,
         images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
         svg: `${srcFolder}/assets/img/**/*.svg`,

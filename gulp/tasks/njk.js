@@ -1,5 +1,5 @@
 import njkRender from "gulp-nunjucks-render"
-import htmlbeautify from "gulp-html-beautify"
+import htmlmin from "gulp-htmlmin";
 
 export const njk = () => {
     return app.gulp.src(app.path.src.njk)
@@ -7,10 +7,7 @@ export const njk = () => {
             path: 'src'
         }))
         .pipe(app.plugins.replace(/@img\//g, '/assets/img/'))
-        // .pipe(app.plugins.rename({
-        //     dirname: ''
-        // }))
-        .pipe(htmlbeautify(({ indentSize: 4 })))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(app.gulp.dest(app.path.build.html))
         .pipe(app.plugins.browserSync.stream())
 }
