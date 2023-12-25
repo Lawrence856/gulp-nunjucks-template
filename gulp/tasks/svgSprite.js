@@ -24,4 +24,4 @@ export const sprite = () => {
             addSize: true
         }))
         .pipe(app.gulp.dest(app.path.build.svgSprite));
-} 
+}

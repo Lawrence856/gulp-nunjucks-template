@@ -1,0 +1,27 @@
+.hidden {
+    display: none !important;
+}
+
+.shown {
+    display: block !important;
+}
+
+@include media(min, mobile) {
+    .hidden-md {
+        display: none !important;
+    }
+
+    .shown-md {
+        display: block !important;
+    }
+}
+
+@include media(min, tablet) {
+    .hidden-lg {
+        display: none !important;
+    }
+
+    .shown-lg {
+        display: block !important;
+    }
+}

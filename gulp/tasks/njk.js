@@ -7,7 +7,7 @@ export const njk = () => {
             path: 'src'
         }))
         .pipe(app.plugins.replace(/@img\//g, '/assets/img/'))
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true, conservativeCollapse: true }))
         .pipe(app.gulp.dest(app.path.build.html))
         .pipe(app.plugins.browserSync.stream())
 }

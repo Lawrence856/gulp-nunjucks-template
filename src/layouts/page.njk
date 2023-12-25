@@ -1,26 +1,31 @@
+{# {% from "components/ui/btn/btn.njk" import btn %}
+{% from "components/ui/text-field/text-field.njk" import textField %}
+{% from "components/media/image.njk" import image %} #}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, follow" />
+    <meta name="robots" content="noindex, nofollow" />
+    
     <link rel="stylesheet" href="/assets/css/libs.min.css">
     <link rel="stylesheet" href="/assets/css/sprite.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <title>{{ page_title | safe }}</title>
+    <title>{{ page_title }}</title>
 </head>
 <body>
     {% include "components/header/header.njk" %}
-
-    <main class="{{ main_class }}">
+    <main class="{{ main_class if main_class else 'inner-page' }}">
         {% block content %}{% endblock %}
     </main>
-
     {% include "components/footer/footer.njk" %}
 
+    {# MODALS #}
     {% block modal %}{% endblock %}
     
+    {# SCRIPTS #}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/libs.min.js"></script>
     <script src="/assets/js/app.js"></script>

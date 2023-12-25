@@ -2,8 +2,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'fonts';
-
-
-// Components
-@import 'components/header/header';
-@import 'components/footer/footer';
+@import 'animation';
+@import 'normalize';
+@import 'common';
+@import 'global';
