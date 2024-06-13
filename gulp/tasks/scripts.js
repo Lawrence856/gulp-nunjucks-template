@@ -11,19 +11,29 @@ const appJs = () => {
                 './src/assets/js/app.js'
             ],
             output: {
-                format: 'umd',
+                format: 'esm',
+                dir: 'dist'
             },
             plugins: [
                 includePaths({ paths: ['src'] }),
+                babel({
+                    presets: ['@babel/env']
+                })
             ]
-        }))
-        .pipe(babel({
-            presets: ['@babel/env']
         }))
         .pipe(app.plugins.sourcemaps.write('.'))
         .pipe(app.gulp.dest(app.path.build.js))
         .pipe(app.plugins.browserSync.stream())
 }
+
+const modules = () => {
+    return app.gulp.src(app.path.src.jsModules)
+        .pipe(app.plugins.sourcemaps.init())
+        .pipe(app.plugins.sourcemaps.write('.'))
+        .pipe(app.gulp.dest(app.path.build.jsModules))
+        .pipe(app.plugins.browserSync.stream())
+}
+
 const libsJs = () => {
     return app.gulp.src(app.path.src.libs.js, { allowEmpty: true })
         .pipe(concat('libs.min.js'))
@@ -32,6 +42,6 @@ const libsJs = () => {
         .pipe(app.plugins.browserSync.stream())
 }
 
-const scripts = gulp.parallel(appJs, libsJs)
+const scripts = gulp.parallel(appJs, modules, libsJs)
 
 export { scripts }

@@ -1,8 +1,12 @@
 // Global
-@import 'variables';
-@import 'mixins';
-@import 'fonts';
-@import 'animation';
-@import 'normalize';
-@import 'common';
-@import 'global';
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "animation";
+@import "reset";
+@import "utilites";
+@import "global";
+
+// Components
+@import "components/header/header";
+@import "components/footer/footer";

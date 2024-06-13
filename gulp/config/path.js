@@ -4,11 +4,12 @@ const srcFolder = './src'
 export const path = {
     build: {
         js: `${buildFolder}`,
+        jsModules: `${buildFolder}/assets/js/modules`,
         jsLibs: `${buildFolder}/assets/js`,
         css: `${buildFolder}/assets/css`,
         html: `${buildFolder}/`,
         images: `${buildFolder}/assets/img`,
-        files: `${buildFolder}/assets/files`,
+        static: `${buildFolder}/assets`,
         svgSprite: `${buildFolder}/assets/css`,
         fonts: `${buildFolder}/assets/fonts`
     },
@@ -17,12 +18,12 @@ export const path = {
             js: `${srcFolder}/assets/libs/js/*.js`,
             css: `${srcFolder}/assets/libs/css/*.css`
         },
-        js: `${srcFolder}/**/*.js`,
+        js: [`${srcFolder}/**/*.js`],
+        jsModules: `${srcFolder}/assets/js/modules/**/*.js`,
         scss: [`${srcFolder}/assets/scss/app.scss`],
         njk: `${srcFolder}/pages/**/*.njk`,
-        images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
-        svg: `${srcFolder}/assets/img/**/*.svg`,
-        files: `${srcFolder}/assets/files/**/*.*`,
+        images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,svg}`,
+        static: `${srcFolder}/assets/static/**/*.*`,
         svgSprite: `${srcFolder}/assets/sprite/*.svg`,
         fonts: `${srcFolder}/assets/fonts`,
     },
@@ -31,7 +32,7 @@ export const path = {
         scss: `${srcFolder}/**/*.{css,scss}`,
         njk: `${srcFolder}/**/*.njk`,
         images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,webp}`,
-        files: `${srcFolder}/assets/files/**/*.*`,
+        static: `${srcFolder}/assets/static/**/*.*`,
         svgSprite: `${srcFolder}/assets/sprite/*.svg`,
         fonts: `${srcFolder}/assets/fonts/*.{otf,ttf}`
     },

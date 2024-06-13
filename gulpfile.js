@@ -5,7 +5,7 @@ import { path } from './gulp/config/path.js'
 import { plugins } from './gulp/config/plugins.js'
 
 // Импорт тасков
-import { copy } from "./gulp/tasks/files.js"
+import { staticFiles } from "./gulp/tasks/static.js"
 import { reset } from "./gulp/tasks/reset.js"
 import { watcher } from "./gulp/tasks/watcher.js"
 import { server } from "./gulp/tasks/server.js"
@@ -24,7 +24,7 @@ global.app = {
     gulp
 }
 
-const tasks = gulp.series(fonts, gulp.parallel(copy, njk, scss, scripts, imgaes, sprite))
+const tasks = gulp.series(fonts, gulp.parallel(staticFiles, njk, scss, scripts, imgaes, sprite))
 
 const dev = gulp.series(reset, tasks, gulp.parallel(watcher, server))
 const build = gulp.series(reset, tasks)
